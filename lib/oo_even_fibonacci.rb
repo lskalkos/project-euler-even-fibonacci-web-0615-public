@@ -1,1 +1,24 @@
 # Implement your object-oriented solution here!
+class EvenFibonacci
+  def initialize(limit)
+    @limit = limit
+  end
+
+  def sum
+    prev_fib = 0
+    fib = 1
+    sum = 0
+
+    while fib < @limit
+      next_fib = fib
+      fib = fib + prev_fib
+      prev_fib = next_fib
+
+      if fib < @limit
+        sum+=fib if fib % 2 == 0
+      end
+    end
+
+    sum
+  end
+end
